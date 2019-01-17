@@ -1,0 +1,112 @@
+body {
+    font-size: 16px;
+    color: white;
+    background-color: #61122f;
+}
+
+#header-nav {
+    background-color: #f6b319;
+    border: 0;
+    border-radius: 0;
+}
+
+#logo-img {
+    background: url("../images/restaurant-logo_large.png") no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 10px 15px 10px 0;
+}
+
+.navbar-brand {
+    padding-top: 25px;
+}
+.navbar-brand h3{
+    color: #557c3e;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #222;
+    font-weight: bold;
+    line-height: .75;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.navbar-brand p {
+    color: #000;
+    vertical-align: center;
+    font-weight: 0.7em;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+    text-decoration: none;
+}
+
+#nav-list {
+    margin-top: 10px;
+
+}
+#nav-list a{
+    text-align: center;
+    color: #61122f;
+}
+
+#nav-list a:hover {
+    background-color: white;
+}
+
+#phone {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+#phone a {
+    text-align: right;
+    padding-bottom: 0;
+}
+
+#phone div {
+    text-align: right;
+    padding-right: 15px;
+    color: #557c3e;
+}
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+    border: 1px solid #61122f;
+}
+
+.navbar-header button.navbar-toggle {
+    clear: both;
+    margin-top: -30px;
+}
+
+@media (max-width: 767px) {
+    .navbar-brand {
+        padding-top: 10px;
+        height: 80px;
+    }
+
+    .navbar-brand h3 {
+        padding-top: 10px;
+        font-size: 5vw;
+    }
+
+    .navbar-brand p {
+        margin-top: 12px;
+        font-size: .6em;
+    }
+
+    .navbar-brand p img { 
+        height: 20px;
+    }
+
+   #collapsable-nav a {
+       font-size: 1.2em;
+   }
+
+   #collapsable-nav a span {
+       font-size: 1em;
+       margin-left: 5px;
+   }
+}

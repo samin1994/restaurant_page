@@ -5,10 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    
     <script src="main.js"></script>
 </head>
 <body>
-    <p>Hello World!</p>
+    <header>
+        <nav id="header-nav" class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="index.html" class="pull-left visible-md visible-lg">
+                        <div id="logo-img" alt="logo image"></div>
+                    </a>
+
+                    <div class="navbar-brand">
+                        <a href="index.html"><h3>David Chu's China Bistro</h3></a>
+                        <p>
+                            <img src="/images/star-k-logo.png" alt="kosher certification">
+                            <span>Kosher Certified</span>
+                        </p>
+                    </div>
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="collapsable-nav" class="collapse navbar-collapse">
+                    <ul id="nav-list" class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="menu-categories.html"><span class="glyphicon glyphicon-cutlery">
+                                <br class="hidden-xs"> Menu
+                            </span>
+
+                            </a>
+                        </li>
+                        <li>
+                                <a href="menu-categories.html"><span class="glyphicon glyphicon-info-sign">
+                                    <br class="hidden-xs"> Info
+                                </span>
+    
+                                </a>
+                        </li>
+                        <li>
+                                <a href="menu-categories.html"><span class="glyphicon glyphicon-certificate">
+                                    <br class="hidden-xs"> Awards
+                                </span>
+    
+                                </a>
+                        </li>
+                        <li id="phone" class="hidden-xs">
+                                <a href="tel:426-000-555">
+                                <span>426-000-5008</span>
+                                </a>
+                                <div>* We Deliver</div>
+                        </li>
+                    </ul>
+                    
+                </div><!-- Colapsable menu! -->
+
+            </div>
+        </nav>
+    </header>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
