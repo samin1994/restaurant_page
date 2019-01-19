@@ -130,6 +130,8 @@ body {
   .menu-categories {
     margin: 0 auto 15px;
   }
+
+  
   .category-tile {
     position: relative;
     width: 200px;
@@ -147,12 +149,13 @@ body {
     background-color: #000;
     color: #fff;
     opacity: .8;
+    text-align: center;
+    font-size: 1.6em;
   }
 
   .category-tile:hover {
     box-shadow: 0 1px 5px 1px gray;
-  }
-  /* End Menu Categories */
+  } /* End Menu Categories */
 
   .panel-footer { /* Footer starts */
     margin-top: 30px;
