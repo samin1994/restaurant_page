@@ -14,7 +14,7 @@ $(function() {
 });
 
 (function(global) {
-    var homehtml = "../snippets/home-snippet.html";
+    var homehtml = "https://samin1994.github.io/restaurant_page/snippets/home-snippet.html";
     var dc = {};
 
     var setHtml = function(selector, html) {
