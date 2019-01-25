@@ -12,3 +12,30 @@ $(function() {
     });
 
 });
+
+(function(global) {
+    var homehtml = "../snippets/home-snippet.txt";
+    var dc = {};
+
+    var setHtml = function(selector, html) {
+        var target = document.querySelector(selector);
+        target.innerHtml(html);
+    }
+
+    var showLoad = function(selector) {
+        html = '<div class="text-center">';
+        html += '<img src="../images/specials-tile.jpg"></div>';
+    }
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        showLoad("#main-content");
+        $ajaxUtils.sendHttpRequest(homehtml, function(responseText) {
+            document.querySelector("#main-content").innerHTML = responseText;
+        }
+        );
+
+    });
+
+    global.dc = dc;
+
+})(window);
