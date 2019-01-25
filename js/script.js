@@ -14,7 +14,7 @@ $(function() {
 });
 
 (function(global) {
-    var homehtml = "../snippets/home-snippet.txt";
+    var homehtml = "../snippets/home-snippet.html";
     var dc = {};
 
     var setHtml = function(selector, html) {
