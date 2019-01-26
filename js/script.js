@@ -19,7 +19,7 @@ $(function() {
 
     var setHtml = function(selector, html) {
         var target = document.querySelector(selector);
-        target.innerHtml(html);
+        target.innerHTML = html;
     }
 
     var showLoad = function(selector) {
@@ -32,10 +32,60 @@ $(function() {
         $ajaxUtils.sendHttpRequest(homehtml, function(responseText) {
             document.querySelector("#main-content").innerHTML = responseText;
         }
-        );
+        , false);
 
     });
 
-    global.dc = dc;
+    var replaceProp = function(string, propName, propValue) {
+        var replacedString = "{{" + propName + "}}" ;
+        string = string
+.replace(new RegExp(replacedString, "g"), propValue);
+        return string;
+    }
+
+    var categoriesJsonUrl = "https://davids-restaurant.herokuapp.com/categories.json";
+    var categoryTitleHtml = "../snippets/categories-title-snippet.html";
+    var allCategoriesHtml = "../snippets/categories-snippet.html";
+
+    dc.loadMenuCategories = function() {
+        showLoad("#main-content");
+        $ajaxUtils.sendHttpRequest(categoriesJsonUrl, loadCategories, true);
+
+    };
+
+    var loadCategories = function(categories) {
+        $ajaxUtils.sendHttpRequest(categoryTitleHtml, 
+        function(categoryTitle) {
+            $ajaxUtils.sendHttpRequest(allCategoriesHtml, 
+            function(allCategories) {
+                var categoriesHtml = buildCategoriesView(categories, categoryTitle, allCategories);
+                setHtml("#main-content", categoriesHtml);
+            }, false);
+
+        }
+        , false);
+    }
+
+    var buildCategoriesView = function(categories, categoryTitle, allCategories) {
+
+        var finalHtml = categoryTitle;
+        finalHtml += '<div class="row" id="menu-categories">';
+
+        for (var i = 0; i < categories.length ; i++) {
+            var html = allCategories;
+            var name = categories[i].name;
+            var short_name = categories[i].short_name;
+            
+            html = replaceProp(html, "short_name", short_name);
+            html = replaceProp(html, "name", name);
+            finalHtml += html;
+        }
+
+        finalHtml += '</div>';
+
+        return finalHtml;
+    }
+
+    global.$dc = dc;
 
 })(window);

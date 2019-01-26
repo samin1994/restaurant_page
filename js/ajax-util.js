@@ -26,7 +26,7 @@
                 isJason = true;
             }
 
-            if (isJason == true) {
+            if (isJason) {
                 responseHandler(JSON.parse((request.responseText)));
             }
             else {
