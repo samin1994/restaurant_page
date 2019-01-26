@@ -44,8 +44,8 @@ $(function() {
     }
 
     var categoriesJsonUrl = "https://davids-restaurant.herokuapp.com/categories.json";
-    var categoryTitleHtml = "../snippets/categories-title-snippet.html";
-    var allCategoriesHtml = "../snippets/categories-snippet.html";
+    var categoryTitleHtml = "https://samin1994.github.io/restaurant_page/snippets/categories-title-snippet.html";
+    var allCategoriesHtml = "https://samin1994.github.io/restaurant_page/snippets/categories-snippet.html";
 
     dc.loadMenuCategories = function() {
         showLoad("#main-content");
