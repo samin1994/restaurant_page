@@ -163,6 +163,10 @@ body {
     margin-bottom: 60px;
   }
 
+  .menu-items-title p {
+    line-height: 1.6;
+  }
+
   .menu-item-tile {
     margin-bottom: 25px;
   }
