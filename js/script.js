@@ -51,9 +51,25 @@ $(function() {
     var menuItemsTitle = "https://samin1994.github.io/restaurant_page/snippets/menu-items-title-snippet.html";
     var menuItems = "https://samin1994.github.io/restaurant_page/snippets/menu-items-snippet.html";
 
+
+    var deactive = function() {
+        var classes = document.querySelector("#homeNav").className;
+        classes = classes.replace(new RegExp("active", 'g'), '');
+        document.querySelector("#homeNav").className = classes;
+
+        var classes = document.querySelector("#menuNav").className;
+        if (classes.indexOf("active") == -1) {
+            classes += " active";
+            document.querySelector("#menuNav").className = classes;
+        }
+        
+
+    }
+
     dc.loadMenuCategories = function() {
         showLoad("#main-content");
         $ajaxUtils.sendHttpRequest(categoriesJsonUrl, loadCategories, true);
+        deactive();
 
     };
 
@@ -110,7 +126,6 @@ $(function() {
 
     var MakeMenuItemsHtml = function(menuItemsJson, menuItemsTitleHtml, menuItemsHtml) {
         
-        console.log(menuItemsJson);
         menuItemsTitleHtml = replaceProp(menuItemsTitleHtml, "name", menuItemsJson.category.name);
         menuItemsTitleHtml = replaceProp(menuItemsTitleHtml, "menu-instructions", menuItemsJson.category.special_instructions);
 
@@ -168,7 +183,7 @@ $(function() {
         return html;
     }
 
-    
+ 
 
     global.$dc = dc;
 
